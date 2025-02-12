@@ -107,3 +107,19 @@ variable "job_schedule" {
   description = "(Optional) A job_schedule block with schedule_name, optional parameters, optional run_on."
   default     = null
 }
+
+variable "timeouts" {
+  description = "The timeouts for different actions on the Automation Runbook"
+  type = object({
+    create = string
+    update = string
+    read   = string
+    delete = string
+  })
+  default = {
+    create = "30m"
+    update = "30m"
+    read   = "5m"
+    delete = "30m"
+  }
+}

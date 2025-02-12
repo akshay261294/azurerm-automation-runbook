@@ -66,4 +66,14 @@ resource "azurerm_automation_runbook" "this" {
       run_on        = try(var.job_schedule.run_on, null)
     }
   }
+
+  dynamic "timeouts" {
+    for_each = toset(try(var.timeouts, null) != null ? ["*"] : [])
+    content {
+      create = try(var.timeouts.create, null)
+      update = try(var.timeouts.update, null)
+      read   = try(var.timeouts.read, null)
+      delete = try(var.timeouts.delete, null)
+    }
+  }
 }
