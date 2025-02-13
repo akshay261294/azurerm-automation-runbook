@@ -24,12 +24,12 @@ variable "runbook_type" {
 }
 
 variable "log_progress" {
-  type        = string
+  type        = bool
   description = "(Required) Progress log option."
 }
 
 variable "log_verbose" {
-  type        = string
+  type        = bool
   description = "(Required) Verbose log option."
 }
 

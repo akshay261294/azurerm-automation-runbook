@@ -1,9 +1,9 @@
 locals {
-  name  = "${random_string.this.result}-AR"
-  rg_name = "${random_string.this.result}-RG"
+  name                    = "${random_string.this.result}-AR"
+  rg_name                 = "${random_string.this.result}-RG"
   automation_account_name = "${random_string.this.result}-AA"
-  location = "West Europe"
-  sku_name = "Basic"
+  location                = "West Europe"
+  sku_name                = "Basic"
   log_verbose             = "true"
   log_progress            = "true"
   description             = "This is an example runbook"
